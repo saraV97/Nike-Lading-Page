@@ -4,7 +4,7 @@ import { navLinks } from "../constants";
 import { motion } from "framer-motion";
 import {
   fadeInAnimationVariants7,
-  fadeInAnimationVariants4,
+  fadeInAnimationVariants8,
 } from "./Animation";
 const Nav = () => {
   return (
@@ -20,13 +20,14 @@ const Nav = () => {
           <img src={headerLogo} alt="Logo" width={130} height={29} />
         </motion.a>
         <ul className=" flex-1 flex justify-center items-center gap-16 max-lg:hidden ">
-          {navLinks.map((item) => (
+          {navLinks.map((item, index) => (
             <motion.li
               key={item.label}
-              variants={fadeInAnimationVariants4}
+              variants={fadeInAnimationVariants8}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
+              custom={index}
             >
               <a
                 href={item.href}

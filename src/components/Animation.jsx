@@ -105,15 +105,15 @@ const fadeInAnimationVariants7 = {
 const fadeInAnimationVariants8 = {
   initial: {
     opacity: 0,
-    y: -100,
+    x: 100,
   },
-  animate: {
+  animate: (index) => ({
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      delay: 0.5,
+      delay: 0.1 * index,
     },
-  },
+  }),
 };
 
 export {
