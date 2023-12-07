@@ -1,23 +1,40 @@
 import { headerLogo } from "../assets/images";
 import { hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
+import { motion } from "framer-motion";
+import {
+  fadeInAnimationVariants7,
+  fadeInAnimationVariants4,
+} from "./Animation";
 const Nav = () => {
   return (
-    <header className="padding-x py-8 absolute z-10 w-full">
+    <header className="padding-x py-8 fixed z-20 w-full bg-white">
       <nav className="flex justify-between items-center max-container">
-        <a href="/">
+        <motion.a
+          href="/"
+          variants={fadeInAnimationVariants7}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           <img src={headerLogo} alt="Logo" width={130} height={29} />
-        </a>
+        </motion.a>
         <ul className=" flex-1 flex justify-center items-center gap-16 max-lg:hidden ">
           {navLinks.map((item) => (
-            <li key={item.label}>
+            <motion.li
+              key={item.label}
+              variants={fadeInAnimationVariants4}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
               <a
                 href={item.href}
                 className=" font-montserrat text-slate-gray leading-normal taxt-lg"
               >
                 {item.label}
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
         <div className="hidden max-lg:block">

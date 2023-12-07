@@ -1,18 +1,25 @@
 import { arrowRight } from "../assets/icons";
 import { offer } from "../assets/images";
 import Button from "../components/Button";
-
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants5 } from "../components/Animation";
 const SpecialOffers = () => {
   return (
     <section className="flex justify-wrap items-center gap-10 max-container max-xl:flex-col-reverse">
-      <div className="flex-1">
+      <motion.div
+        className="flex-1"
+        variants={fadeInAnimationVariants5}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
         <img
           src={offer}
           width={773}
           height={687}
           className="object=contain w-full"
         />
-      </div>
+      </motion.div>
       <div className="flex flex-2 flex-col">
         <h2 className="font-palanquin text-4xl font-bold lg: max-w-lg">
           <span className="text-coral-red "> Special </span> Offer
