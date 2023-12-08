@@ -2,11 +2,36 @@ import { headerLogo } from "../assets/images";
 import { hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import Links from "./Sidebar/Links.jsx";
+import ToggleButton from "./Sidebar/toggleButton";
+
 import {
   fadeInAnimationVariants7,
   fadeInAnimationVariants8,
 } from "./Animation";
+
+const variants = {
+  open: {
+    clipPath: "circle(1200px at 330px 1px)",
+    transition: {
+      type: "spring",
+      stiffness: 20,
+    },
+  },
+  closed: {
+    clipPath: "circle(30px at 330px 1px)",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
+
 const Nav = () => {
+  const [open, setOpen] = useState(false);
   return (
     <header className="padding-x py-8 fixed z-20 w-full bg-white">
       <nav className="flex justify-between items-center max-container">
@@ -31,15 +56,33 @@ const Nav = () => {
             >
               <a
                 href={item.href}
-                className=" font-montserrat text-slate-gray leading-normal taxt-lg"
+                className=" font-montserrat text-slate-gray leading-normal taxt-lg hover:text-coral-red"
               >
                 {item.label}
               </a>
             </motion.li>
           ))}
         </ul>
-        <div className="hidden max-lg:block">
-          <img src={hamburger} alt="Hamburger" width={25} height={25} />
+        {/* <div className="hidden max-lg:block">
+          <img src={hamburger} alt="hamburger icon" width={25} height={25} />
+        </div> */}
+        <div className=" hidden max-lg:block">
+          <motion.div
+            className="flex flex-col items-center justify-center bg-white relative z-20"
+            w
+            animate={open ? "open" : "closed"}
+          >
+            <motion.div
+              className="bg-coral-red fixed top-0 right-0 bottom-0 w-[300px] z-[-1] "
+              variants={variants}
+            >
+              <Links />
+            </motion.div>
+            <ToggleButton
+              setOpen={setOpen}
+              className="z-999 w-12 h-12 border-r-[50%] top-7 right-7 fixed bg-transparent border-none cursor-pointer"
+            />
+          </motion.div>
         </div>
       </nav>
     </header>
