@@ -6,7 +6,7 @@ const SuperQuality = () => {
   return (
     <section
       id="about-us"
-      className="flex justify-between items-center w-full max-container max-lg:flex-col gap-10"
+      className="flex justify-between items-center w-full max-container max-lg:flex-col gap-10 pt-24"
     >
       <div className="flex flex-1 flex-col">
         <h2 className="font-palanquin text-4xl font-bold lg: max-w-lg">

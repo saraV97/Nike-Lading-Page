@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-full flex xl:flex-row  justify-center 
+      className="w-full flex xl:flex-row justify-center 
       min-h-screen gap-10 max-container"
     >
       <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28">
@@ -72,7 +72,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center"
+        className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center top-0"
         variants={fadeInAnimationVariants1}
         initial="initial"
         whileInView="animate"

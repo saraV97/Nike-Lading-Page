@@ -81,7 +81,7 @@ const Nav = () => {
               <Links />
             </motion.div>
             <ToggleButton
-              setOpen={!setOpen}
+              setOpen={setOpen}
               className="z-999 w-12 h-12 border-r-[50%] top-7 right-7 fixed bg-transparent border-none cursor-pointer"
             />
           </motion.div>
