@@ -21,22 +21,22 @@ export const App = () => {
       <section className="padding">
         <PopularProducts />
       </section>
-      <section className="padding">
+      <section className="padding overflow-x-hidden">
         <SuperQuality />
       </section>
-      <section className="padding-x py-10">
+      <section className="padding-x py-10 overflow-x-hidden">
         <Services />
       </section>
-      <section className="padding">
+      <section className="padding overflow-x-hidden">
         <SpecialOffers />
       </section>
-      <section className="bg-pale-blue padding">
+      <section className="bg-pale-blue padding overflow-x-hidden">
         <CustomerReviews />
       </section>
-      <section className="padding-x sm:py-32 py-16 w-full">
+      <section className="padding-x sm:py-32 py-16 w-full overflow-x-hidden">
         <Subscribe />
       </section>
-      <section className="bg-black padding-x padding-t pb-8">
+      <section className="bg-black padding-x padding-t pb-8 overflow-x-hidden">
         <Footer />
       </section>
     </main>

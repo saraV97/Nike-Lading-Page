@@ -14,18 +14,20 @@ import {
 const variants = {
   open: {
     clipPath: "circle(1200px at 330px 1px)",
+    opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 20,
+      type: "linear",
+      stiffness: 200,
     },
   },
   closed: {
     clipPath: "circle(30px at 330px 1px)",
+    // opacity: 0,
     transition: {
-      delay: 0.5,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
+      delay: 0.3,
+      type: "linear",
+      stiffness: 800,
+      damping: 20,
     },
   },
 };
@@ -34,7 +36,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
   return (
     <header className="padding-x py-8 fixed z-20 w-full bg-white">
-      <nav className="flex justify-between items-center max-container">
+      <nav className="flex justify-between items-center">
         <motion.a
           href="/"
           variants={fadeInAnimationVariants7}
@@ -68,18 +70,18 @@ const Nav = () => {
         </div> */}
         <div className=" hidden max-lg:block">
           <motion.div
-            className="flex flex-col items-center justify-center bg-white relative z-20"
-            w
+            className="flex flex-col items-center justify-center bg-white relative z-20 "
             animate={open ? "open" : "closed"}
           >
             <motion.div
               className="bg-coral-red fixed top-0 right-0 bottom-0 w-[300px] z-[-1] "
               variants={variants}
+              initial={{ opacity: 0 }}
             >
               <Links />
             </motion.div>
             <ToggleButton
-              setOpen={setOpen}
+              setOpen={!setOpen}
               className="z-999 w-12 h-12 border-r-[50%] top-7 right-7 fixed bg-transparent border-none cursor-pointer"
             />
           </motion.div>

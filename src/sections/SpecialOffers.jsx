@@ -11,7 +11,7 @@ const SpecialOffers = () => {
         variants={fadeInAnimationVariants5}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.5 }}
       >
         <img
           src={offer}

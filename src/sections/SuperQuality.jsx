@@ -33,7 +33,7 @@ const SuperQuality = () => {
         variants={fadeInAnimationVariants4}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.5 }}
       >
         <img
           src={shoe8}

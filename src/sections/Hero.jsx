@@ -85,14 +85,14 @@ const Hero = () => {
           height={500}
           className="object-contain relative z-10"
         />
-        <div className=" flex sm:gap-5 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6 ">
+        <div className="hidden xl:flex xl:gap-16 sm:gap-5 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
           {shoes.map((shoe, index) => (
             <motion.div
               key={shoe}
               variants={fadeInAnimationVariants3}
               initial="initial"
               whileInView="animate"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.5 }}
               custom={index}
             >
               <ShoeCard
